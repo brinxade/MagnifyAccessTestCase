@@ -1,0 +1,35 @@
+.button {
+    display: inline-block;
+    background-color: black;
+    color: white;
+    padding: 10px 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+
+    &:hover {
+        background-color: #333;
+    }
+}
+
+input[type="text"], input[type="email"], select {
+    border-radius: 5px;
+    outline: none;
+    padding: 8px;
+    border: 1px solid black;
+    transition: box-shadow 0.2s;
+    min-width: 270px;
+
+    &.error {
+        box-shadow: 0 0 0 4px $clr-error;
+    }
+}
+
+input[type="text"]:focus, input[type="email"]:focus, select:focus {
+    box-shadow: 0 0 0 4px rgba(0,0,0,0.2);
+}
+
+#search {
+    max-width: 400px;
+    width: 100%;
+}
