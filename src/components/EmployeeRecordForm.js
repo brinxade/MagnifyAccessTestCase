@@ -112,10 +112,13 @@ function EmployeeRecordhtmlForm(props) {
 
             <div className="fieldset">
                 <label htmlFor="f_doc">Document<br/><span className="text-s">Max size: 5 MB</span></label>
-                <div className="file-upload inline-block mr1">
+                <div className={`file-upload inline-block mr1 ${formErrors.document && "error"}`}>
                     <input id="f_doc" ref={fileField} type="file" className="mb1" onChange={(e) => updateFileName(e)}/>
                 </div>
-                {selectedFile && <p><strong>File selected: </strong>{selectedFile}</p>}
+                {selectedFile && <div>
+                    <p className="nm"><strong>File selected: </strong>{selectedFile}</p>
+                    {formErrors.document && <p className="error-msg nm"><i class="fas fa-circle-info"></i>{formErrors.document}</p>}
+                </div>}
             </div>
 
             <button className="button mb3" type="submit" onClick={handleForm}>Submit</button>

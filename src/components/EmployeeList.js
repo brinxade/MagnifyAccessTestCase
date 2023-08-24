@@ -27,7 +27,7 @@ function EmployeeList(props) {
                         <td>{emp.department}</td>
                         <td>{emp.empStatus}</td>
                         <td>{emp.email}</td>
-                        <td className="action"><a href={`${config.apiUrl}/${emp.documentURL}`}><i class="fa-solid fa-download"></i> Download</a></td>
+                        <td className="action">{emp.documentURL && <a href={`${config.apiUrl}/${emp.documentURL}`}><i class="fa-solid fa-download"></i> Download</a>}</td>
                     </tr>)
                 }
                 </tbody>
